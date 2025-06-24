@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.parent{
+    height: 100vh;
+    display: grid;
+    
+}
+header,footer, .left-section, .right-section, main{
+    padding: 10px;
+}
+header {
+    grid-column: 1 / 4;
+    text-align: center;
+    background-color: rgb(136, 173, 229);
+}
+
+.left-section {
+    grid-column: 1 / 2;
+    background-color: rgb(238, 189, 115);
+}
+main{
+    grid-column: 2 / 3;
+    background-color: rgb(157, 191, 169);
+}
+.right-section{
+    grid-column:  3/4;
+    background-color: rgb(238, 189, 115);
+}
+footer{
+    grid-column: 1/4;
+    text-align: center;
+    background-color: rgb(221, 153, 153);
+}
