@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag&Drop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div>
+        <h1 class="text-3xl font-bold text-center mb-6">3 Column Drag and Drop</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="column bg-purple-100 p-4 rounded min-h-[300px]">
+                <h2 class="text-xl mb-2">Column1</h2>
+                <div class="draggable bg-blue-200 p-3 rounded mb-2 cursor-move" draggable="true">Task1</div>
+                <div class="draggable bg-blue-200 p-3 rounded mb-2 cursor-move" draggable="true">Task2</div>
+            </div>
+            <div class="column bg-red-100 p-4 rounded min-h-[300px] ">
+                <h2 class="text-xl mb-2">Column2</h2>
+                <div class="draggable bg-blue-200 p-3 rounded mb-2 cursor-move" draggable="true">Task 3</div>
+            </div>
+            <div class="column bg-green-100 p-4 rounded min-h-[300px]">
+                <h2 class="text-xl mb-2">Column3</h2>
+                <div class="draggable bg-blue-200 p-3 rounded mb-2 cursor-move" draggable="true">Task4</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
