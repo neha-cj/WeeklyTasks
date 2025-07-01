@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body>
-    <section class="flex flex-col justify-center items-center gap-4 ">
-        <h1>ToDo</h1>
+    <section class="flex flex-col justify-center items-center gap-4 p-4 ">
+        <h1 class="font-semibold text-2xl">ToDo</h1>
         <div class="entry-section">
-            <input class="entry-field pt-4 border rounded" type="text" placeholder="enter a new task"/>
-            <button class="add-btn bg-blue-200 text-white pt-4 hover:bg-blue-400" onclick="addTask()">Add Task</button>
+            <input class="entry-field p-2 border rounded" type="text" placeholder="enter a new task"/>
+            <button class="add-btn bg-blue-400 text-white p-2 hover:bg-blue-600 border rounded" onclick="addTask()">Add Task</button>
         </div>
+        <div id="tasksection" class="flex flex-col min-w-[300px]"></div>
     </section>
     <script src="script.js"></script>
 </body>
