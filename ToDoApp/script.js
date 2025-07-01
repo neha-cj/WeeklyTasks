@@ -5,7 +5,6 @@ let Mytasks=JSON.parse(localStorage.getItem('MyTasks'))||[];
 
 window.addEventListener('load',()=>{
     console.log(Mytasks);
-    taskSection.innerHTML = "";
     const elements = Mytasks.map(task =>createTaskElement(task));
     taskSection.replaceChildren(...elements);
 })
@@ -16,8 +15,6 @@ function addTask(){
         Mytasks.push({text:inputVal,status:false});
         
         inputElement.value='';
-        const taskItem = createTaskElement(inputVal);
-        taskSection.appendChild(taskItem);
         localStorage.setItem('MyTasks',JSON.stringify(Mytasks));
         const elements = Mytasks.map(task => createTaskElement(task));
         taskSection.replaceChildren(...elements);        
@@ -38,7 +35,7 @@ function createTaskElement(task){
     buttonDiv.className="flex space-x-2";
 
     const editbtn=document.createElement("button");
-    editbtn.className='edit-button text-blue-500 hover:text-blue-700';
+    editbtn.className='edit-button text-blue-500 hover:text-blue-700 ';
     editbtn.innerHTML='<i class="fa fa-pencil"></i>';
     const deletebtn=document.createElement("button");
     deletebtn.className='delete-button text-red-500 hover:text-red-700';
@@ -79,12 +76,9 @@ function createTaskElement(task){
             const newText= input.value.trim();
             if (newText!==""){ 
                 task.text=newText;
-                
-                const p =document.createElement("p");
-                p.className="flex-grow cursor-pointer"
-                p.innerText =newText;
-                localStorage.setItem("MyTasks",JSON.stringify(Mytasks));
-                taskItem.replaceChild(p,input);
+                tasktext.innerText=newText;
+                taskItem.replaceChild(tasktext,input);
+                localStorage.setItem("MyTasks",JSON.stringify(Mytasks));    
             }
             else{
                 taskItem.replaceChild(tasktext, input)
