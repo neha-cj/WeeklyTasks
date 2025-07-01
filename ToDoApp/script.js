@@ -50,7 +50,14 @@ function createTaskElement(task){
         task.status =!task.status
         taskItem.classList.toggle("line-through",task.status);
         taskItem.classList.toggle("opacity-60", task.status)
-        console.log(taskItem.status)
+        if(task.status){
+            editbtn.classList.add("hidden");
+            deletebtn.classList.add("hidden")
+        }
+        else{
+            editbtn.classList.remove("hidden");
+            deletebtn.classList.remove("hidden");
+        }
         localStorage.setItem('MyTasks',JSON.stringify(Mytasks));
 
     })
@@ -72,12 +79,18 @@ function createTaskElement(task){
             const newText= input.value.trim();
             if (newText!== ""){ 
                 task.text=newText;
-                tasktext.innerText=newText
+                
+                const p =document.createElement("p");
+                p.className="flex-grow cursor-pointer"
+                p.innerText =newText;
                 localStorage.setItem("MyTasks",JSON.stringify(Mytasks));
-                taskItem.replaceChild(input,tasktext);
+                taskItem.replaceChild(p,input);
+            }
+            else{
+                taskItem.replaceChild(tasktext, input)
             }
         }
-        input.addEventListener("blur", save); 
+        //input.addEventListener("blur", save); 
         input.addEventListener("keydown", (e)=>{
             if(e.key === "Enter"){
                 save();
