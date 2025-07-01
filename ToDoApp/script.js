@@ -12,8 +12,8 @@ window.addEventListener('load',()=>{
 
 function addTask(){
     const inputVal=inputElement.value;
-    if(inputVal.trim() !== ''){
-        Mytasks.push({text: inputVal,status:false});
+    if(inputVal.trim()!==''){
+        Mytasks.push({text:inputVal,status:false});
         
         inputElement.value='';
         const taskItem = createTaskElement(inputVal);
@@ -28,16 +28,16 @@ function addTask(){
 function createTaskElement(task){
      //creating the task
     const taskItem= document.createElement("div");
-    taskItem.className='task-item flex space-x-3 border border-grey-300 rounded shadow-sm p-4 m-2';
-    if (task.status) taskItem.classList.add("line-through","opacity-60");
-    const tasktext = document.createElement("p");
-    tasktext.className = "flex-grow cursor-pointer";
+    taskItem.className='task-item bg-white flex space-x-3 border border-grey-300 rounded shadow-sm p-4 m-2';
+    if (task.status)taskItem.classList.add("line-through","opacity-60");
+    const tasktext =document.createElement("p");
+    tasktext.className ="flex-grow cursor-pointer";
     tasktext.innerHTML=task.text;
 
     const buttonDiv=document.createElement("div");
     buttonDiv.className="flex space-x-2";
 
-    const editbtn= document.createElement("button");
+    const editbtn=document.createElement("button");
     editbtn.className='edit-button text-blue-500 hover:text-blue-700';
     editbtn.innerHTML='<i class="fa fa-pencil"></i>';
     const deletebtn=document.createElement("button");
@@ -63,9 +63,9 @@ function createTaskElement(task){
     })
     //delete function
     deletebtn.onclick=()=>{
-        console.log("delete button clicked for ", task.text);
+        console.log("delete button clicked for ",task.text);
         taskItem.remove();
-        Mytasks = Mytasks.filter(t => t.text !== task.text);
+        Mytasks = Mytasks.filter(t => t.text!== task.text);
         localStorage.setItem('MyTasks', JSON.stringify(Mytasks));
     }
     editbtn.onclick=()=>{
@@ -77,7 +77,7 @@ function createTaskElement(task){
         input.focus()
         const save = () =>{
             const newText= input.value.trim();
-            if (newText!== ""){ 
+            if (newText!==""){ 
                 task.text=newText;
                 
                 const p =document.createElement("p");
@@ -90,9 +90,8 @@ function createTaskElement(task){
                 taskItem.replaceChild(tasktext, input)
             }
         }
-        //input.addEventListener("blur", save); 
-        input.addEventListener("keydown", (e)=>{
-            if(e.key === "Enter"){
+        input.addEventListener("keydown",(e)=>{
+            if(e.key ==="Enter"){
                 save();
             }
         });
