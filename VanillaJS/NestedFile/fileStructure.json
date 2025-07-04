@@ -1,0 +1,20 @@
+[{
+    "name": "root",
+    "type":"folder",
+    "children" : [
+    { "name": "file1.txt", "type": "file"},
+    {
+        "name":"subfolder",
+        "type":"folder",
+        "children": [
+            {
+                "name":"file2.txt", "type": "file"
+            },
+            {
+                "name":"file3.txt","type":"file"           
+            }
+        ]
+    }
+    ]
+}
+]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <section class="bg-purple-200 flex flex-col justify-center items-center gap-4 p-4 max-w-[50%] mx-auto mt-[10%] shadow-xl">
+        <h1 class="font-semibold text-2xl">TODO</h1>
+        <div class="entry-section flex gap-2">
+            <input class="entry-field p-2 border rounded w-full sm:w-auto flex-1 min-w-[150px]" type="text" placeholder="enter a new task"/>
+            <button class="add-btn bg-blue-400 text-white p-2 hover:bg-blue-600 border rounded" onclick="addTask()">Add Task</button>
+        </div>
+        <div id="tasksection" class="flex flex-col sm:min-w-[300px]"></div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
