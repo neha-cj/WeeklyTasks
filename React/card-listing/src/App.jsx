@@ -13,10 +13,14 @@ const Card= ({title, artist, cover}) =>{
 function App() {
 
   return (
-    <div>
-      <Card title="Sweet Child O'Mine" artist="Guns N'Roses" cover=""/>
-      <Card title="Comfortably Numb" artist="Pink Floyd" cover=""/>
-      <Card title="Quietly Yours" artist="Birdy" cover=""/>
+    <div className=" min-h-screen bg-slate-400">
+      <h1 className="text-3xl font-bold text-center py-6 text-[#200f47]">PlayList</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6">
+        <Card title="Sweet Child O'Mine" artist="Guns N'Roses" cover="/download.jpeg" />
+        <Card title="Comfortably Numb" artist="Pink Floyd" cover="/pink.jpeg"/>
+        <Card title="Quietly Yours" artist="Birdy" cover="/birdy.jpeg"/>
+      </div>
+      
     </div>
   )
 }
