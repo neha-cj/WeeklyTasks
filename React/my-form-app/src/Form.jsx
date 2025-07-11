@@ -8,38 +8,58 @@ export default function Form(){
         resume:null,
         relocate:"",
     })
+    const handleChange =(e)=>{
+        const {name, value, type, checked, files}=e.target;
+
+        if(type === 'file'){
+            setFormData({
+                ...formData,
+                [name]: files[0],
+            })
+        }else {
+            setFormData({
+                ...formData,
+                [name]: value,
+            })
+        }
+    }
+    
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log(formData);
+    }
 
 
     return(
-        <form className=" flex flex-col items-center gap-2 shadow-xl m-3 p-4 " >
+        <form onSubmit={handleSubmit} className=" flex flex-col items-center gap-2 shadow-xl m-3 p-4 " >
             <h1 className="text-xl font-bold">Job Application Form</h1>
             <div>
                 <label>Name:</label><br/>
-                <input name="name" type="text" value={formData.name} className="w-full border border-black p-2 rounded" required/>
+                <input name="name" type="text" value={formData.name} onChange={handleChange}  className="w-full border border-black p-2 rounded" required/>
             </div>
             <div>
                 <label>Email:</label><br/>
-                <input name="email" type="email" vlaue={formData.email} className="w-full border border-black p-2 rounded" required/>
+                <input name="email" type="email" vlaue={formData.email} onChange={handleChange}  className="w-full border border-black p-2 rounded" required/>
 
             </div>
             <div>
                 <label>BirthDate: </label><br/>
-                <input name="birthDate" type="date" value={formData.birthdate} className="w-full border border-black p-2 rounded"/>
+                <input name="birthDate" type="date" value={formData.birthdate} onChange={handleChange}  className="w-full border border-black p-2 rounded"/>
             </div>
 
             <div>
                 <label>Resume</label>
-                <input name="resume" type="file" accept=".pdf, .doc, .docx" className="w-full" required></input>
+                <input name="resume" type="file" accept=".pdf, .doc, .docx" onChange={handleChange}  className="w-full" required></input>
             </div>
 
             <div>
                 <label>Willing to Relocate?</label>
                 <div className="flex flex-col">
                     <label>
-                        <input type="radio" name="relocate" value="yes" checked={formData.relocate==='yes'} className="mr-2"/>Yes
+                        <input type="radio" name="relocate" value="yes" checked={formData.relocate==='yes'}  onChange={handleChange}  className="mr-2"/>Yes
                     </label>
                     <label>
-                        <input type="radio" name="relocate" value="no" checked={formData.relocate === 'no'} className="mr-2"/>No
+                        <input type="radio" name="relocate" value="no" checked={formData.relocate === 'no'}  onChange={handleChange}  className="mr-2"/>No                    
                     </label>
                 </div>
             </div>
