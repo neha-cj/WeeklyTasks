@@ -28,7 +28,7 @@ function App() {
   }
   const resetTimer = () =>{
     clearInterval(timeRef.current);
-    setIsRunning(false);s
+    setIsRunning(false);
     setTimeLeft(60);
   }
 
@@ -37,7 +37,7 @@ function App() {
   },[])
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen bg-gray-200'>
+    <div className='flex flex-col items-center justify-center mt-20 p-8 bg-gray-200'>
       <h1 className='text-4xl font-bold mb-4'>Countdown Timer</h1>
       <div className='text-6xl font-mono mb-8'>{timeleft}s</div>
       <div className='flex gap-4'>
