@@ -1,6 +1,4 @@
 import {useState, useRef, useEffect} from 'react'
-
-
 function App() {
   const [timeleft,setTimeLeft] = useState(60);
   const [isRunning, setIsRunning] = useState(false);
@@ -44,12 +42,12 @@ function App() {
   },[])
 
   const format = (seconds ) =>{
-    const m =Math.floor(seconds/60).toString().padStart(2,"0");
+    const h=Math.floor(seconds /3600).toString().padStart(2,"0");
+    const m =Math.floor((seconds%3600)/60).toString().padStart(2,"0");
     const s= (seconds % 60).toString().padStart(2,"0");
-    return `${m}:${s}`;
+    return `${h}:${m}:${s}`;
 
   }
-
   return (
     <div className='flex flex-col items-center justify-center mt-20 p-8 bg-gray-200'>
       <h1 className='text-4xl font-bold mb-4'>Countdown Timer</h1>
