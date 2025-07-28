@@ -7,12 +7,12 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center transition-colors duration-300 ${
+      className={`m-3 flex justify-center transition-colors duration-300 ${
         theme === "dark" ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <div className="text-center">
-        <h1 className="text-3xl font-bold mb-4">
+        <h1 className="text-3xl font-bold mb-4 p-1">
           {theme === "light" ? "Light Mode" : "Dark Mode"}
         </h1>
         <button
@@ -20,7 +20,7 @@ function App() {
           className={`px-4 py-2 rounded transition ${
             theme === "dark"
               ? "bg-gray-700 hover:bg-gray-600 text-white"
-              : "bg-purple-600 hover:bg-purple-700 text-white"
+              : "bg-purple-500 hover:bg-purple-700 text-white"
           }`}
         >
           Toggle Theme
