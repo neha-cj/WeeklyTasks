@@ -1,3 +1,12 @@
+# React Theme Switcher with Context API
+
+- Created a Context using createContext() to hold shared theme data (light or dark).
+- ThemeProvider component to: Store theme state using useState. Provide a toggleTheme function to switch themes. Wrap children with ThemeContext.Provider 
+- Wrapped entire app in the ThemeProvider to allow any component in the app tree to access the context.
+- useContext(ThemeContext) inside components to access the current theme and trigger theme switching via toggleTheme().
+- conditional className logic in JSX to apply styles based on theme
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
